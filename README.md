@@ -40,7 +40,9 @@ Código base de la aplicación Expense Tracker Hecha en React.js y Tailwind CSS.
 ## Dependencias
 
 - React
+- React Icons
 - React Victory
+- Sweetalert2
 
 ---
 

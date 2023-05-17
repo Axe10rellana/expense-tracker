@@ -1,3 +1,6 @@
+//react-icons
+import { AiFillDelete } from "react-icons/ai";
+
 //context
 import { useGlobalState } from "../../context/ExpenseTrackerContext";
 
@@ -11,10 +14,10 @@ const TransactionItem = ({ transaction }) => {
       <div className="flex items-center gap-x-2">
         <span>${transaction.amount}</span>
         <button
-          className="bg-[#e74c3c] text-white text-lg px-2 rounded-full"
+          className="bg-[#e74c3c] text-white text-lg p-2 rounded-full"
           onClick={() => deleteTransaction(transaction.id)}
         >
-          x
+          <AiFillDelete />
         </button>
       </div>
     </li>

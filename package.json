@@ -11,16 +11,20 @@
     "preview": "vite preview"
   },
   "keywords": [
+    "expense-tracker",
     "react",
-    "tailwind",
+    "react-icons",
     "react-victory",
-    "expense-tracker"
+    "sweetalert2",
+    "tailwind"
   ],
   "author": "Axe10rellana",
   "license": "MIT",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.8.0",
+    "sweetalert2": "^11.7.5",
     "victory": "^36.6.10"
   },
   "devDependencies": {

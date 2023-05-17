@@ -1,6 +1,9 @@
 //react
 import { useState } from "react";
 
+//react-icons
+import { AiOutlineTransaction } from "react-icons/ai";
+
 //context
 import { useGlobalState } from "../../context/ExpenseTrackerContext";
 
@@ -56,7 +59,9 @@ const TransactionForm = () => {
               : "cursor-not-allowed"
           }`}
         >
-          Add Transaction
+          <p className="flex items-center justify-center gap-x-2">
+            Add Transaction <AiOutlineTransaction />
+          </p>
         </button>
       </form>
     </div>
