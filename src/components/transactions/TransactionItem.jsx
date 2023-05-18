@@ -14,7 +14,7 @@ const TransactionItem = ({ transaction }) => {
       <div className="flex items-center gap-x-2">
         <span>${transaction.amount}</span>
         <button
-          className="bg-[#e74c3c] text-white text-lg p-2 rounded-full"
+          className="bg-[#e74c3c] text-white outline-none text-lg p-2 rounded-full"
           onClick={() => deleteTransaction(transaction.id)}
         >
           <AiFillDelete />

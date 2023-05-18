@@ -54,7 +54,7 @@ export const ExpenseTrackerProvider = ({ children }) => {
         Swal.fire({
           icon: "success",
           title: "Success",
-          text: "Task successfully deleted",
+          text: "Transaction successfully deleted",
           timer: 2000,
           confirmButtonColor: "#2ecc71",
         });
@@ -83,7 +83,7 @@ export const ExpenseTrackerProvider = ({ children }) => {
         Swal.fire({
           icon: "success",
           title: "Success",
-          text: "Task successfully deleted",
+          text: "Transaction successfully deleted",
           timer: 2000,
           confirmButtonColor: "#2ecc71",
         });

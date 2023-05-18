@@ -32,7 +32,7 @@ const TransactionForm = () => {
     <div>
       <form onSubmit={onSubmit}>
         <input
-          className="bg-zinc-600 text-white px-3 py-2 rounded-lg block mb-2 w-full"
+          className="bg-zinc-600 text-white outline-none px-3 py-2 rounded-lg block mb-2 w-full"
           type="text"
           name="description"
           placeholder="Enter a Description"
@@ -42,7 +42,7 @@ const TransactionForm = () => {
           required
         />
         <input
-          className="bg-zinc-600 text-white px-3 py-2 rounded-lg block mb-2 w-full"
+          className="bg-zinc-600 text-white outline-none px-3 py-2 rounded-lg block mb-2 w-full"
           type="number"
           name="amount"
           step="0.01"
@@ -53,7 +53,7 @@ const TransactionForm = () => {
           required
         />
         <button
-          className={`bg-indigo-700 text-white transition-colors duration-300 px-3 py-2 rounded-lg block mb-2 w-full hover:bg-indigo-500 ${
+          className={`bg-indigo-700 text-white outline-none transition-colors duration-300 px-3 py-2 rounded-lg block mb-2 w-full hover:bg-indigo-500 ${
             description !== "" && amount !== 0
               ? "cursor-pointer"
               : "cursor-not-allowed"
