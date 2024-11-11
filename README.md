@@ -1,8 +1,8 @@
-# Expense Tracker
+# Expense Tracker Tool
 
 ## Descripción
 
-Código base de la aplicación Expense Tracker Hecha en React.js y Tailwind CSS.
+Código base de la aplicación Expense Tracker Tool Hecha en React.js y Tailwind CSS.
 
 ---
 
@@ -18,14 +18,17 @@ Código base de la aplicación Expense Tracker Hecha en React.js y Tailwind CSS.
 
 ## Enlace A La Aplicación
 
-- [Expense Tracker](https://axe10rellana-expense-tracker.netlify.app/)
+- [Expense Tracker](https://expense-tracker-tool.netlify.app/)
 
 ---
 
 ## Hecho con
 
-- [React](https://react.dev/) - JS library
+- [React](https://react.dev/) - JS Library
+- [React Victory](https://commerce.nearform.com/open-source/victory/) - For Charting And Data Visualization
+- [React Icons](https://react-icons.github.io/react-icons/) - For Icons
 - [Tailwind CSS](https://tailwindcss.com/) - For Styles
+- [SweetAlert2](https://sweetalert2.github.io/) - For Alerts
 
 ---
 
