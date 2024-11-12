@@ -8,34 +8,45 @@ import { AiOutlineTransaction } from "react-icons/ai";
 import { useGlobalState } from "../../context/ExpenseTrackerContext";
 
 const TransactionForm = () => {
-  //context variables
-  const { addTransaction } = useGlobalState();
+  //Context variables
+  const { addIncome, addExpense } = useGlobalState();
 
-  //state variables
+  //State variables
   const [description, setDescription] = useState("");
   const [amount, setAmount] = useState(0);
 
-  //functions
-  const onSubmit = (e) => {
-    e.preventDefault();
-    addTransaction({
+  //Functions
+  const handleTransaction = (transactionType) => {
+    const transaction = {
       id: window.crypto.randomUUID(),
       description,
       amount: +amount,
-    });
+      type: transactionType,
+    };
+
+    if (transactionType === "income") {
+      addIncome(transaction);
+    } else if (transactionType === "expense") {
+      addExpense(transaction);
+    }
 
     setAmount(0);
     setDescription("");
   };
 
+  const handleAmountChange = (e) => {
+    const value = parseFloat(e.target.value);
+    setAmount(value > 0 ? value : "");
+  };
+
   return (
     <div>
-      <form onSubmit={onSubmit}>
+      <form>
         <input
           className="bg-zinc-600 text-white outline-none px-3 py-2 rounded-lg block mb-2 w-full"
           type="text"
           name="description"
-          placeholder="Enter a Description"
+          placeholder="Ingrese una descripción"
           autoComplete="off"
           onChange={(e) => setDescription(e.target.value)}
           value={description}
@@ -48,19 +59,35 @@ const TransactionForm = () => {
           step="0.01"
           placeholder="00.00"
           autoComplete="off"
-          onChange={(e) => setAmount(e.target.value)}
+          onChange={handleAmountChange}
           value={amount}
+          min="0.01"
           required
         />
         <button
+          type="button"
+          onClick={() => handleTransaction("income")}
           className={`bg-indigo-700 text-white outline-none transition-colors duration-300 px-3 py-2 rounded-lg block mb-2 w-full hover:bg-indigo-500 ${
-            description !== "" && amount !== 0
+            description !== "" && amount > 0
               ? "cursor-pointer"
               : "cursor-not-allowed"
           }`}
         >
           <p className="flex items-center justify-center gap-x-2">
-            Add Transaction <AiOutlineTransaction />
+            Agregar Ingreso <AiOutlineTransaction />
+          </p>
+        </button>
+        <button
+          type="button"
+          onClick={() => handleTransaction("expense")}
+          className={`bg-red-700 text-white outline-none transition-colors duration-300 px-3 py-2 rounded-lg block mb-2 w-full hover:bg-red-500 ${
+            description !== "" && amount > 0
+              ? "cursor-pointer"
+              : "cursor-not-allowed"
+          }`}
+        >
+          <p className="flex items-center justify-center gap-x-2">
+            Agregar Gasto <AiOutlineTransaction />
           </p>
         </button>
       </form>

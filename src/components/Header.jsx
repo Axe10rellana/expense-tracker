@@ -5,7 +5,8 @@ const Header = () => {
   return (
     <h1 className="text-2xl font-bold">
       <p className="flex items-center justify-start gap-x-2">
-        Expense Tracker <GiExpense />
+        Expense Tracker Tool
+        <GiExpense />
       </p>
     </h1>
   );

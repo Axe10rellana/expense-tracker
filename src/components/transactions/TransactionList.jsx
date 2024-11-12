@@ -5,17 +5,16 @@ import { useGlobalState } from "../../context/ExpenseTrackerContext";
 import { TransactionItem } from "../";
 
 const TransactionList = () => {
-  //context variables
+  //Context variables
   const { transactions } = useGlobalState();
 
   //variables
-  const amounts = transactions.map((transaction) => transaction.amount);
-  const total = amounts.reduce((acc, item) => (acc += item), 0).toFixed(2);
+  const hasTransactions = transactions.length > 0;
 
   return (
     <>
       <h3 className="text-slate-300 text-xl font-bold block">
-        {+total === 0 ? "Empty history" : "History"}
+        {hasTransactions ? "Historial" : "Historial vacío"}
       </h3>
       <ul>
         {transactions.map((transaction) => (

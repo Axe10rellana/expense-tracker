@@ -2,29 +2,28 @@
 import { useGlobalState } from "../context/ExpenseTrackerContext";
 
 const IncomeExpenses = () => {
-  //context variables
+  // Context variables
   const { transactions } = useGlobalState();
 
-  //variables
-  const amounts = transactions.map((transaction) => transaction.amount);
-  const income = amounts
-    .filter((item) => item > 0)
-    .reduce((acc, item) => (acc += item), 0)
+  // Variables
+  const income = transactions
+    .filter((transaction) => transaction.type === "income")
+    .reduce((acc, transaction) => acc + transaction.amount, 0)
     .toFixed(2);
-  const expense =
-    amounts
-      .filter((item) => item < 0)
-      .reduce((acc, item) => (acc += item), 0)
-      .toFixed(2) * -1;
+
+  const expense = transactions
+    .filter((transaction) => transaction.type === "expense")
+    .reduce((acc, transaction) => acc + transaction.amount, 0)
+    .toFixed(2);
 
   return (
     <>
       <div className="flex justify-between my-2">
-        <h4>Income</h4>
+        <h4>Ingresos</h4>
         <p>{income}</p>
       </div>
       <div className="flex justify-between my-2">
-        <h4>Expense</h4>
+        <h4>Gastos</h4>
         <p>{expense}</p>
       </div>
     </>
