@@ -23,6 +23,11 @@ export default (state, action) => {
           (transaction) => transaction.id !== action.payload
         ),
       };
+    case "REORDER_TRANSACTIONS":
+	    return {
+	      ...state,
+	      transactions: action.payload,
+	    };
     default:
       return state;
   }

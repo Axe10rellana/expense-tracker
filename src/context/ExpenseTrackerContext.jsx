@@ -115,11 +115,23 @@ export const ExpenseTrackerProvider = ({ children }) => {
     });
   };
 
+  const reorderTransactions = (startIndex, endIndex) => {
+	  const result = Array.from(state.transactions);
+	  const [removed] = result.splice(startIndex, 1);
+	  result.splice(endIndex, 0, removed);
+	  
+	  dispatch({
+	    type: "REORDER_TRANSACTIONS",
+	    payload: result,
+	  });
+	};
+
   const data = {
     transactions: state.transactions,
     addIncome,
     addExpense,
     deleteTransaction,
+    reorderTransactions,
   };
 
   return (

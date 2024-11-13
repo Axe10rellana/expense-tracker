@@ -24,6 +24,7 @@ Código base de la aplicación Expense Tracker Tool Hecha en React.js y Tailwind
 
 ## Hecho con
 
+- [Hello Pangea DND](https://github.com/hello-pangea/dnd) - For Drag And Drop
 - [React](https://react.dev/) - JS Library
 - [React Victory](https://commerce.nearform.com/open-source/victory/) - For Charting And Data Visualization
 - [React Icons](https://react-icons.github.io/react-icons/) - For Icons
@@ -42,6 +43,7 @@ Código base de la aplicación Expense Tracker Tool Hecha en React.js y Tailwind
 
 ## Dependencias
 
+- @hello-pangea/dnd
 - React
 - React Icons
 - React Victory
